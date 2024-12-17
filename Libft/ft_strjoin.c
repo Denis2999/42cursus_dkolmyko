@@ -6,31 +6,17 @@
 /*   By: dkolmyko <dkolmyko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 13:46:16 by dkolmyko          #+#    #+#             */
-/*   Updated: 2024/12/16 13:55:16 by dkolmyko         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:12:15 by dkolmyko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
-int ft_strlen(const char *str)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int i;
-
-	i = 0;
-	while (str[i] != 0)
-	{
-		i++;
-	}
-	return (i);
-}
-
-char *ft_strjoin(char const *s1, char const *s2)
-{
-	int i;
-	int j;
-	char *str;
+	int		i;
+	int		j;
+	char	*str;
 
 	i = 0;
 	j = 0;

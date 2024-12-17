@@ -6,7 +6,7 @@
 /*   By: dkolmyko <dkolmyko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 15:51:26 by dkolmyko          #+#    #+#             */
-/*   Updated: 2024/12/17 13:19:55 by dkolmyko         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:13:29 by dkolmyko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static unsigned int	ft_number_size(int number)
 {
 	unsigned int	length;
-	
+
 	length = 0;
 	if (number == 0)
 		return (1);
@@ -31,7 +31,7 @@ static unsigned int	ft_number_size(int number)
 
 char	*ft_itoa(int n)
 {
-	char		*string;
+	char			*string;
 	unsigned int	number;
 	unsigned int	length;
 
@@ -61,7 +61,7 @@ char	*ft_itoa(int n)
 // int main() {
 //     int num = -12345;
 //     char *result = ft_itoa(num);
-    
+
 //     if (result != NULL) {
 //         printf("The string representation of %d is: %s\n", num, result);
 //         free(result);  // Don't forget to free the allocated memory!

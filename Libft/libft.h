@@ -6,14 +6,14 @@
 /*   By: dkolmyko <dkolmyko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:23:01 by dkolmyko          #+#    #+#             */
-/*   Updated: 2024/12/17 15:26:34 by dkolmyko         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:14:58 by dkolmyko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-#define LIBFT_H
-#include <unistd.h>
-#include <stdlib.h>
+# define LIBFT_H
+# include <unistd.h>
+# include <stdlib.h>
 // #include <string.h>
 
 int		ft_atoi(const char *str);

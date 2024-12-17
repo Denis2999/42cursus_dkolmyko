@@ -6,16 +6,17 @@
 /*   By: dkolmyko <dkolmyko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 14:32:45 by dkolmyko          #+#    #+#             */
-/*   Updated: 2024/12/17 11:40:44 by dkolmyko         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:08:08 by dkolmyko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	int i;
+	int	i;
+
 	i = 0;
 	while (s[i] != '\0')
 	{
@@ -27,9 +28,9 @@ char *ft_strchr(const char *s, int c)
 	}
 	if (c == '\0')
 	{
-		return (char *)&s[i];
+		return ((char *)&s[i]);
 	}
-	return NULL;
+	return (NULL);
 }
 
 // int main()

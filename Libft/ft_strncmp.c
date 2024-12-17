@@ -6,16 +6,16 @@
 /*   By: dkolmyko <dkolmyko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 09:24:53 by dkolmyko          #+#    #+#             */
-/*   Updated: 2024/12/17 13:50:10 by dkolmyko         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:10:32 by dkolmyko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
-	int diff;
+	size_t	i;
+	int		diff;
 
 	i = 0;
 	diff = 0;

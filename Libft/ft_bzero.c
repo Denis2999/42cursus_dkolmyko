@@ -6,17 +6,19 @@
 /*   By: dkolmyko <dkolmyko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:11:11 by dkolmyko          #+#    #+#             */
-/*   Updated: 2024/12/17 11:28:22 by dkolmyko         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:16:42 by dkolmyko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	size_t i = 0;
-	unsigned char *ptr = (unsigned char *)s;
+	size_t			i;
+	unsigned char	*ptr;
 
+	i = 0;
+	ptr = (unsigned char *)s;
 	while (i < n)
 	{
 		ptr[i] = '\0';
@@ -34,7 +36,7 @@ void ft_bzero(void *s, size_t n)
 // 	}
 // 	printf("\n");
 // }
-	
+
 // int main()
 // {
 // 	char buffer[10] = "ABCDEFGHI"; // Test buffer

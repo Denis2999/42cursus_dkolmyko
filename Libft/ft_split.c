@@ -6,7 +6,7 @@
 /*   By: dkolmyko <dkolmyko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 14:14:56 by dkolmyko          #+#    #+#             */
-/*   Updated: 2024/12/17 11:40:00 by dkolmyko         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:03:17 by dkolmyko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ char	**ft_split(char const *str, char c)
 // int main() {
 //     const char *str = "Hello, this is a test string!";
 //     char delimiter = ' ';
-    
+
 //     // Calling ft_split
 //     char **result = ft_split(str, delimiter);
 
@@ -131,6 +131,6 @@ char	**ft_split(char const *str, char c)
 //     } else {
 //         printf("Error: ft_split returned NULL\n");
 //     }
-    
+
 //     return 0;
 // }

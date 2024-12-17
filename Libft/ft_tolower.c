@@ -6,13 +6,13 @@
 /*   By: dkolmyko <dkolmyko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 14:18:20 by dkolmyko          #+#    #+#             */
-/*   Updated: 2024/12/17 12:17:49 by dkolmyko         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:16:50 by dkolmyko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_tolower(int i)
+int	ft_tolower(int i)
 {
 	if (i >= 'A' && i <= 'Z')
 	{
