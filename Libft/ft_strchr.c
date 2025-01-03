@@ -6,7 +6,7 @@
 /*   By: dkolmyko <dkolmyko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 14:32:45 by dkolmyko          #+#    #+#             */
-/*   Updated: 2024/12/17 16:08:08 by dkolmyko         ###   ########.fr       */
+/*   Updated: 2025/01/02 17:01:29 by dkolmyko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
+	c %= 256;
 	i = 0;
 	while (s[i] != '\0')
 	{
