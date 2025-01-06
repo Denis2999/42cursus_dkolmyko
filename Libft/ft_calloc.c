@@ -6,7 +6,7 @@
 /*   By: dkolmyko <dkolmyko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 16:39:14 by dkolmyko          #+#    #+#             */
-/*   Updated: 2024/12/17 16:32:41 by dkolmyko         ###   ########.fr       */
+/*   Updated: 2025/01/06 10:52:18 by dkolmyko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,9 @@ void	*ft_calloc(size_t count, size_t size)
 	return (p);
 }
 
+// if (size != 0 && count > SIZE_MAX / size)
+//     return (NULL);
+//
 // int main() {
 //     size_t num_elements = 5;
 //     size_t element_size = sizeof(int);
