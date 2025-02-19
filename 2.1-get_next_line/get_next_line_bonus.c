@@ -6,7 +6,7 @@
 /*   By: dkolmyko <dkolmyko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 18:07:32 by dkolmyko          #+#    #+#             */
-/*   Updated: 2025/02/11 15:25:07 by dkolmyko         ###   ########.fr       */
+/*   Updated: 2025/02/19 16:58:01 by dkolmyko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*get_next_line(int file_descript)
 	char		*output_line;
 
 	buffer = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (file_descript < 0 || BUFFER_SIZE <= 0 || read(file_descript, 0, 0) < 0)
+	if (file_descript < 0 || BUFFER_SIZE <= 0)
 	{
 		free(tail[file_descript]);
 		free(buffer);
