@@ -6,7 +6,7 @@
 /*   By: dkolmyko <dkolmyko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 18:49:23 by dkolmyko          #+#    #+#             */
-/*   Updated: 2025/02/16 12:22:39 by dkolmyko         ###   ########.fr       */
+/*   Updated: 2025/02/19 20:44:59 by dkolmyko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,19 @@
 #endif
 
 #include <stdio.h>
+
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <limits.h>
+#include <stdint.h>
 
 int ft_printf(const char *sentence, ...);
-int check_conversion(const char *character, va_list arguments);
-char *ft_itoa(int n);
+int display_character(char character);
+int display_string(const char *attachment);
+int display_integer(int num);
+int display_unsigned_integer(unsigned int integer);
+int display_hexadecimal(unsigned int integer, char format);
+int display_pointer(uintptr_t addres);
 
 #endif

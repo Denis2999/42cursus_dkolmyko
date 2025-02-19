@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_character.c                                 :+:      :+:    :+:   */
+/*   display_character.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkolmyko <dkolmyko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 12:03:25 by dkolmyko          #+#    #+#             */
-/*   Updated: 2025/02/16 12:12:38 by dkolmyko         ###   ########.fr       */
+/*   Updated: 2025/02/19 08:54:40 by dkolmyko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "ft_printf.h"
+#include "../ft_printf.h"
 
-// int handle_character(va_list arguments)
-// {
-// 	char character = (char)va_arg(arguments, int);
+int display_character(char one_char)
+{
+	if (write(1, &one_char, 1) == -1)
+	{
+		return (-1);
+	}
 
-// 	return (display(&character));
-// }
+	return (1);
+}

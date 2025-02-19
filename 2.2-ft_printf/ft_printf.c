@@ -1,9 +1,58 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dkolmyko <dkolmyko@student.42warsaw.pl>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/19 20:28:30 by dkolmyko          #+#    #+#             */
+/*   Updated: 2025/02/19 20:44:38 by dkolmyko         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
+
+int check_conversion(const char *character, va_list arguments)
+{
+	int attachment_lenght = 0;
+
+	if (*character == 'c')
+	{
+		char one_char = (char)va_arg(arguments, int);
+		attachment_lenght += display_character(one_char);
+	}
+	else if (*character == 's')
+	{
+		attachment_lenght += display_string(va_arg(arguments, char *));
+	}
+	else if (*character == 'p')
+	{
+		attachment_lenght += display_pointer(va_arg(arguments, uintptr_t));
+	}
+	else if (*character == 'd' || *character == 'i')
+	{
+		attachment_lenght += display_integer(va_arg(arguments, int));
+	}
+	else if (*character == 'u')
+	{
+		attachment_lenght += display_unsigned_integer(va_arg(arguments, unsigned int));
+	}
+	else if (*character == 'x' || *character == 'X')
+	{
+		attachment_lenght += display_hexadecimal((unsigned)va_arg(arguments, unsigned int), *character);
+	}
+	else if (*character == '%')
+	{
+		attachment_lenght += display_character('%');
+	}
+
+	return (attachment_lenght);
+}
 
 int ft_printf(const char *sentence, ...)
 {
 	int i = 0;
-	int attachment_length = 0;
+	int length = 0;
 	va_list arguments;
 
 	va_start(arguments, sentence);
@@ -11,23 +60,23 @@ int ft_printf(const char *sentence, ...)
 	{
 		if (sentence[i] == '%')
 		{
-			i++;
-			attachment_length = check_conversion(&sentence[i], arguments);
-			i++;
+			length += check_conversion(&sentence[++i], arguments);
+			if (length < 0)
+			{
+				return (-1);
+			}
 		}
-
-		write(1, &sentence[i], 1);
+		else
+		{
+			length += display_character(sentence[i]);
+			if (length < 0)
+			{
+				return (-1);
+			}
+		}
 		i++;
 	}
 
 	va_end(arguments);
-	return (i + attachment_length);
-}
-
-int main()
-{
-	unsigned int num = 42;
-	int count_1 = ft_printf("Hello, my name is %s and I'm %d years old.\n", "Laura", 23);
-	// int count_2 = printf("Hello my name is %s and I'm %d years old\n", "Laura", 23);
-	return 0;
+	return (length);
 }
