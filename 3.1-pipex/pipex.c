@@ -6,13 +6,13 @@
 /*   By: dkolmyko <dkolmyko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 16:08:19 by dkolmyko          #+#    #+#             */
-/*   Updated: 2025/03/26 15:44:48 by dkolmyko         ###   ########.fr       */
+/*   Updated: 2025/03/28 13:26:57 by dkolmyko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void execute_vector(const char *arg_vector, const char *env_vector[])
+void execute_vector(char *arg_vector, char **env_vector)
 {
 	char **splitted_cmd;
 	char *path;
@@ -24,11 +24,11 @@ void execute_vector(const char *arg_vector, const char *env_vector[])
 		ft_putstr_fd("pipex: command not found: ", 2);
 		ft_putendl_fd(splitted_cmd[0], 2);
 		ft_free(splitted_cmd);
-		exit(0);
+		exit(1);
 	}
 }
 
-void handle_child(const char *arg_vector[], int *pipe_fd, const char *env_vector[])
+void handle_child(char **arg_vector, int *pipe_fd, char **env_vector)
 {
 	int file_descriptor;
 
@@ -39,7 +39,7 @@ void handle_child(const char *arg_vector[], int *pipe_fd, const char *env_vector
 	execute_vector(arg_vector[2], env_vector);
 }
 
-void handle_parent(const char *arg_vector[], int *pipe_fd, const char *env_vector[])
+void handle_parent(char **arg_vector, int *pipe_fd, char **env_vector)
 {
 	int file_descriptor;
 
@@ -50,7 +50,7 @@ void handle_parent(const char *arg_vector[], int *pipe_fd, const char *env_vecto
 	execute_vector(arg_vector[3], env_vector);
 }
 
-int main(int arg_count, const char *arg_vector[], const char *env_vector[])
+int main(int arg_count, char **arg_vector, char **env_vector)
 {
 	int pipe_fd[2];
 	pid_t current_process_id;
