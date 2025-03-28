@@ -6,15 +6,15 @@
 /*   By: dkolmyko <dkolmyko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 12:16:47 by dkolmyko          #+#    #+#             */
-/*   Updated: 2025/03/28 11:41:07 by dkolmyko         ###   ########.fr       */
+/*   Updated: 2025/03/28 17:01:19 by dkolmyko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int open_file(char *file_name, int flag)
+int	open_file(char *file_name, int flag)
 {
-	int file_descriptor;
+	int	file_descriptor;
 
 	if (flag == 0)
 	{
@@ -24,19 +24,17 @@ int open_file(char *file_name, int flag)
 	{
 		file_descriptor = open(file_name, O_WRONLY | O_CREAT | O_TRUNC, 0777);
 	}
-
 	if (file_descriptor == -1)
 	{
 		perror("open");
 		exit(1);
 	}
-
-	return file_descriptor;
+	return (file_descriptor);
 }
 
-void ft_free(char *array[])
+void	ft_free(char *array[])
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (array[i])
@@ -47,10 +45,10 @@ void ft_free(char *array[])
 	free(array);
 }
 
-int ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int i;
-	int diff;
+	int	i;
+	int	diff;
 
 	i = 0;
 	diff = 0;
@@ -67,11 +65,11 @@ int ft_strcmp(char *s1, char *s2)
 }
 
 // To debug functions below:
-char *my_getenv(char *name, char **env)
+char	*my_getenv(char *name, char **env)
 {
-	int i;
-	int j;
-	char *sub;
+	int		i;
+	int		j;
+	char	*sub;
 
 	i = 0;
 	while (env[i])
@@ -91,30 +89,31 @@ char *my_getenv(char *name, char **env)
 	return (NULL);
 }
 
-char *get_path(char *cmd, char **env)
+char	*get_path(char *command, char **env_vector)
 {
-	int i;
-	char *exec;
-	char **allpath;
-	char *path_part;
-	char **s_cmd;
+	int		i;
+	char	*exec;
+	char	**allpath;
+	char	*path_part;
+	char	**split_cmd;
 
-	i = -1;
-	allpath = ft_split(my_getenv("PATH", env), ':');
-	s_cmd = ft_split(cmd, ' ');
-	while (allpath[++i])
+	i = 0;
+	allpath = ft_split(my_getenv("PATH", env_vector), ':');
+	split_cmd = ft_split(command, ' ');
+	while (allpath[i])
 	{
 		path_part = ft_strjoin(allpath[i], "/");
-		exec = ft_strjoin(path_part, s_cmd[0]);
+		exec = ft_strjoin(path_part, split_cmd[0]);
 		free(path_part);
 		if (access(exec, F_OK | X_OK) == 0)
 		{
-			ft_free(s_cmd);
+			ft_free(split_cmd);
 			return (exec);
 		}
 		free(exec);
+		i++;
 	}
 	ft_free(allpath);
-	ft_free(s_cmd);
-	return (cmd);
+	ft_free(split_cmd);
+	return (command);
 }

@@ -2,8 +2,8 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 # Source file (ONLY .c file)
-SRC = pipex.c \
-		utils.c
+SRC = src/pipex.c \
+		src/utils.c
 # Object file
 OBJ = $(SRC:.c=.o)
 # Executable name
