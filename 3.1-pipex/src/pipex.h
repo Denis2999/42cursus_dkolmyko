@@ -6,14 +6,14 @@
 /*   By: dkolmyko <dkolmyko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 16:06:05 by dkolmyko          #+#    #+#             */
-/*   Updated: 2025/03/28 16:59:51 by dkolmyko         ###   ########.fr       */
+/*   Updated: 2025/04/11 16:59:18 by dkolmyko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PIPEX_H
 # define PIPEX_H
 
-# include <stdio.h>
+# include <stdio.h> // Needed for perror()
 
 # include "../libft/libft.h"
 # include <unistd.h>
