@@ -13,7 +13,7 @@ Each folder contains subdirectories with individual exercise solutions, includin
 
 To run any exercise:
 1. Clone the repository:  
-   `git clone https://github.com/Denis2999/piscine_dkolmyko_github`
+   `git clone git@github.com:Denis2999/42cursus_dkolmyko.git`
 2. Navigate to the desired folder.
 3. Compile the code using `gcc` or the preferred compiler:
    gcc -Wall -Wextra -Werror -o program_name source_file.c
