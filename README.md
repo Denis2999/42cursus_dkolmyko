@@ -12,5 +12,6 @@ The repository is organized into directories corresponding to each project or mo
 - **0 Piscine**: Solutions to various exercises completed during the 42 School's coding bootcamp.
 - **1 Libft**: Implementation of a custom standard C library, recreating various standard functions and adding new utility functions.
 - **2.1 Get Next Line**: Development of a function that reads a line from a file descriptor, handling various edge cases and ensuring efficient memory usage.
+- **3.1 pipex**: The purpose of this project is to try and replicate the workings of the shell pipe operator in a C program (this will be useful for minishell)
 
 ---
