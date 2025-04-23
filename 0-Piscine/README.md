@@ -23,8 +23,3 @@ To run any exercise:
 ## Requirements
 
 - Ensure you have GCC or any standard C compiler installed on your system.
-
-## Contributions
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Denis2999/piscine_dkolmyko_github/issues).
-
